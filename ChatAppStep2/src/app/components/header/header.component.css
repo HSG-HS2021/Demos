@@ -1,0 +1,13 @@
+header {
+    background-color: #ffffff;
+    color: #ffffff;
+    height: 100px;
+    border-bottom: 1px solid #c1c1c1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+img {
+    width: 300px;
+}
