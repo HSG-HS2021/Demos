@@ -9,21 +9,29 @@ export class ChatBarComponent implements OnInit {
   @Output() submitMessage = new EventEmitter<string>();
 
   public chatMessage = '';
+  public errorMessage = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   public addMessage(message: string): void {
-    if (!message) {
-      alert('Bitte Text erfassen!');
+    if (!message?.trim()) {
+      this.errorMessage = 'Bitte Text erfassen!';
+      this.chatMessage = '';
+
+      // alert(this.errorMessage);
+      // console.log(this.errorMessage);
+
       return;
     }
 
-    // alert(message);
+    const timestamp: string = new Date().toLocaleString('de');
+    const messageToSend = `${message} - ${timestamp}<br>`;
 
-    this.submitMessage.emit(message);
+    this.submitMessage.emit(messageToSend);
 
     this.chatMessage = '';
+    this.errorMessage = '';
   }
 }

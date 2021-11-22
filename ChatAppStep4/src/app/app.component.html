@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col">
         <h2>{{title}}</h2>
-        <app-chat-history [history]="messageHistory" ></app-chat-history>
+        <app-chat-history [history]="messageHistory"></app-chat-history>
         <app-chat-bar (submitMessage)="onSubmitMessage($event)"></app-chat-bar>
       </div>
     </div>
