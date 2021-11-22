@@ -3,4 +3,5 @@
   placeholder="type here"></textarea>
 <button class="btn btn-primary" (click)="addMessage(chatMessage)" [disabled]="!chatMessage">send</button>
 
-<div>autom. Textausgabe der Textarea: <strong>{{chatMessage}}</strong></div>
+<div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
+<!-- <div>autom. Textausgabe der Textarea: <strong>{{chatMessage}}</strong></div> -->

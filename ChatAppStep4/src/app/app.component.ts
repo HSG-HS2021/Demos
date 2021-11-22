@@ -12,11 +12,6 @@ export class AppComponent {
 
   public onSubmitMessage($event: string): void {
     // alert($event);
-
-    if (!this.messageHistory) {
-      this.messageHistory = '';
-    }
-
     this.messageHistory += $event;
   }
 }
