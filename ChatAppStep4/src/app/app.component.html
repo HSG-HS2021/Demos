@@ -1,13 +1,26 @@
 <div class="container">
-  <app-header></app-header>
-  <main>
-    <div class="row">
-      <div class="col">
-        <h2>{{title}}</h2>
-        <app-chat-history [history]="messageHistory"></app-chat-history>
-        <app-chat-bar (submitMessage)="onSubmitMessage($event)"></app-chat-bar>
-      </div>
+  <div class="row">
+    <app-header class="col-12"></app-header>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ title }}</h1>
     </div>
-  </main>
-  <app-footer></app-footer>
+  </div>
+  <div class="row">
+    <app-nickname class="col-md-4"></app-nickname>
+    <app-chat-history
+      class="col-md-8"
+      [history]="messageHistory"
+    ></app-chat-history>
+  </div>
+  <div class="row justify-content-end">
+    <app-chat-bar
+      (submitMessage)="onSubmitMessage($event)"
+      class="col-md-8"
+    ></app-chat-bar>
+  </div>
+  <div class="row">
+    <app-footer class="col-12"></app-footer>
+  </div>
 </div>

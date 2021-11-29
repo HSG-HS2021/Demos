@@ -4,3 +4,7 @@ main {
     margin-top: 21px;
     margin-bottom: 36px;
 }
+
+app-chat-bar {
+    margin-top: 20px;
+}
