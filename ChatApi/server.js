@@ -61,21 +61,21 @@ app.get("/nicknames", function (req, res, next) {
 })
 
 app.get("/nicknames/:id", function (req, res, next) {
-  // for (var i = 0; nicknames.length > 0; i++) {
-  //     var nickname = nicknames[i];
+  for (var i = 0; nicknames.length > 0; i++) {
+      var nickname = nicknames[i];
 
-  //     if (nickname && nickname.id === +req.params.id) {
-  //         res.send({ username: nickname.username, id: nickname.id });
-  //     }
-  // }
-
-  const nickname = nicknames.find((e) => e.id === +req.params.id)
-
-  if (!nickname) {
-    res.status(404).send("Nickname not found")
+      if (nickname && nickname.id === +req.params.id) {
+          res.send({ username: nickname.username, id: nickname.id });
+      }
   }
 
-  res.status(200).send(nickname)
+  // const nickname = nicknames.find((e) => e.id === +req.params.id)
+
+  // if (!nickname) {
+  //   res.status(404).send("Nickname not found")
+  // }
+
+  // res.status(200).send(nickname)
 })
 
 app.post("/nicknames", function (req, res, next) {
