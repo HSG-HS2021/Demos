@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ChatMessage } from '../shared/models/chat-message';
 import { Person } from '../shared/models/person';
 import { ChatService } from '../shared/services/chat.service';
@@ -16,7 +16,7 @@ export class ChatHistoryComponent implements OnInit {
 
   constructor(private chatService: ChatService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.scrollTo();
 
     setInterval(() => {
@@ -43,7 +43,6 @@ export class ChatHistoryComponent implements OnInit {
       }
     );
   }
-
   private scrollTo(): void {
     console.log(this.scrollFrame?.nativeElement?.scrollHeight);
     this.scrollFrame?.nativeElement?.scroll({

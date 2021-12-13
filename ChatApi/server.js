@@ -50,7 +50,7 @@ app.post("/history", function (req, res, next) {
   chatHistory.push({
     message: req.body.message,
     nickname: req.body.nickname,
-    date: date,
+    createdAt: date,
   })
 
   res.json({ message: "History created!" })

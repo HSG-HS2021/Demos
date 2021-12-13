@@ -9,7 +9,7 @@ import { ChatService } from '../shared/services/chat.service';
   styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent implements OnInit {
-  // @Output() submitMessage = new EventEmitter<string>();
+  @Output() submitMessage = new EventEmitter<string>();
 
   public chatMessage = '';
   public errorMessage = '';
